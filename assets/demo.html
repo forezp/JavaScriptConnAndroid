@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://www.morefans.cc/MfsJSBridge/demo/1TestFunc.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>方法调用基本流程测试</title>
+</head>
+<body>
+	<div id="echoInfo">如果有数据返回，会显示在这儿</div>
+
+	<script type="text/javascript">
+		function echoInfo( container, obj ){
+			var domContainer = document.getElementById('echoInfo');
+			domContainer.innerHTML = JSON.stringify( obj );
+		}
+
+		var MfsJSBridge = MfsJSBridge || undefined;
+		if( undefined != MfsJSBridge ){
+
+			//看这里
+			MfsJSBridge.invoke( 'testFunc', {
+				id : 1,
+				name : '测试'
+				
+			});
+
+		}else{
+			alert('未定义MfsJSBridge');
+
+		}
+
+	</script>
+
+
+</body></html>
